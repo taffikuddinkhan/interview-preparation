@@ -3,8 +3,21 @@ import java.util.Scanner;
 
 public class Arraylistinsert {
 
-    static   Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
     static int choice;
+
+
+    public static void printarray(ArrayList <Integer> list){
+
+                System.out.println("updated array list :");
+        for(int i = 0 ; i<list.size() ; i++){
+
+           System.out.println(" index " + i + " Value: " + list.get(i));
+
+        }
+        System.out.println("The updated array size is : " + list.size());
+
+    }
 
     public static void insertatany(ArrayList <Integer> list){
 
@@ -15,7 +28,7 @@ public class Arraylistinsert {
         System.out.println("Enter the position : ");
         int position = sc.nextInt();
 
-        if(position >= 0 && position < list.size()){
+        if(position >= 0 && position <= list.size()){
             
             list.add(position, value);
             System.out.println("Sucessfully inserted " + value + "  at  "  + position + " th index");
@@ -24,13 +37,7 @@ public class Arraylistinsert {
             System.out.println("you choose invalid index ");
         }
         
-        System.out.println("updated array list :");
-        for(int i = 0 ; i<list.size() ; i++){
-
-           System.out.println(" index " + i + " Value: " + list.get(i));
-
-        }
-        System.out.println("The updated array size is : " + list.size());
+        printarray(list);
 
     }  
 
@@ -54,14 +61,7 @@ public class Arraylistinsert {
                 list.remove(position);
                 System.out.println("Sucessfully deleted......");
 
-
-                    System.out.println("updated array list :");
-                    for(int i = 0 ; i<list.size() ; i++){
-
-                    System.out.println("index " + i + " Value: " + list.get(i));
-
-                    }
-                    System.out.println("The updated array size is : " + list.size());
+                printarray(list);
             }
 
             else if ( choice == 0) {
@@ -96,18 +96,11 @@ public class Arraylistinsert {
             
                 System.out.println("Sucessfully updated......");
 
-                    System.out.println("updated array list :");
-                    for(int i = 0 ; i<list.size() ; i++){
-
-                    System.out.println("index " + i + " Value: " + list.get(i));
-
-                    }
-
-                    System.out.println("The updated array size is : " + list.size());
+                printarray(list);
             }
 
             else if ( choice == 0) {
-                System.out.println(" Delete process canceled ");
+                System.out.println(" update process canceled ");
             }
 
         }
@@ -121,7 +114,6 @@ public class Arraylistinsert {
 
     public static void main(String[] args) {
         
-        Scanner sc = new Scanner(System.in);
         ArrayList<Integer> list = new ArrayList<>();
                 list.add(10);
                 list.add(20);
@@ -153,7 +145,7 @@ public class Arraylistinsert {
                 break;
 
                 case 0 :
-                return;
+                System.exit(0);
                 
                 default:
                 System.out.println("Invalid choice");
