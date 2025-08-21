@@ -9,7 +9,7 @@ public class Arraylistinsert {
 
     public static void printarray(ArrayList <Integer> list){
 
-                System.out.println("updated array list :");
+        System.out.println("updated array list :");
         for(int i = 0 ; i<list.size() ; i++){
 
            System.out.println(" index " + i + " Value: " + list.get(i));
